@@ -1,0 +1,35 @@
+//
+// main.cpp for azad in /home/debrau_c/cours/piscine/cpp_d06/ex00
+// 
+// Made by Carl DEBRAUWERE
+// Login   <debrau_c@epitech.net>
+// 
+// Started on  Mon Jan  9 09:20:18 2017 Carl DEBRAUWERE
+// Last update Tue Jan 10 01:23:08 2017 Carl DEBRAUWERE
+//
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include "sickkoala.h"
+#include "koalanurse.h"
+#include "koaladoctor.h"
+#include "sickkoalalist.h"
+
+int main(){
+  SickKoala jean("Jean"), moi("moi"), l1a("l1"), l2a("a"), l3a("l1");
+  SickKoalaList l1(&jean);
+  SickKoalaList l2(&moi);
+  SickKoalaList l3(&l1a);
+  SickKoalaList l4(&l2a);
+  SickKoalaList l5(&l3a);
+  l1.append(&l2);
+  l1.append(&l3);
+  l1.append(&l4);
+  l1.append(&l5);
+  SickKoala *l = l1.getFromName("a");
+  l->poke();
+  l1.dump();
+}

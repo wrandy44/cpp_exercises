@@ -1,0 +1,7 @@
+salut
+3
+picture:ham.txt
+4
+coucou
+5
+a+

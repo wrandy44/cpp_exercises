@@ -1,0 +1,22 @@
+#!/bin/sh
+## mouli.sh for zad in /home/debrau_c/cours/piscine/cpp_d06/ex00
+## 
+## Made by Carl DEBRAUWERE
+## Login   <debrau_c@epitech.net>
+## 
+## Started on  Mon Jan  9 09:22:04 2017 Carl DEBRAUWERE
+## Last update Mon Jan  9 09:35:14 2017 Carl DEBRAUWERE
+##
+
+test=("azdazdaz" "test2")
+
+if [ -z "my_cat" ]; then
+    echo "Compile my_cat pls\n"
+fi
+
+for f in $test;do
+    cat "$f" 2> cat_ret.log
+    ./my_cat "$f" 2> my_cat_ret.log
+    diff cat_ret.log my_cat_ret.log
+    if [ $? == "0" ];then echo "ok";else echo "nok"; fi
+done
